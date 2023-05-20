@@ -1,8 +1,9 @@
 import Match from "./Match";
 import { Word } from "@/types";
 import { MongoClient } from "mongodb";
+import { cookies } from "next/headers";
 
-export const dynamic = "force dynamic";
+export const dynamic = "force-dynamic";
 
 type Definition = {
   word: string;
@@ -46,6 +47,7 @@ const getWords = async () => {
 
 export default async function Page() {
   const words = await getWords();
+  cookies().get("words");
   return (
     <div className="flex flex-col items-center">
       <Match wordsData={words} />

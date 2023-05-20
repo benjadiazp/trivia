@@ -1,6 +1,7 @@
 import { Question as QuestionType } from "@/types";
 import Match from "./Match";
 import { MongoClient } from "mongodb";
+import { cookies } from "next/headers";
 
 export const dynamic = "force-dynamic";
 
@@ -44,7 +45,7 @@ const getQuestions = async () => {
 
 export default async function Game() {
   const questions = await getQuestions();
-
+  cookies().get("questions");
   return (
     <div>
       <Match questions={questions} />
