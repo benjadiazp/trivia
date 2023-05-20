@@ -2,6 +2,8 @@ import { Question as QuestionType } from "@/types";
 import Match from "./Match";
 import { MongoClient } from "mongodb";
 
+export const dynamic = "force dinamic";
+
 const getQuestionsData = async () => {
   const uri = `${process.env.MONGODB_URI}`;
   const client = new MongoClient(uri);
