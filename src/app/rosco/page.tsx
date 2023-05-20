@@ -2,7 +2,7 @@ import Match from "./Match";
 import { Word } from "@/types";
 import { MongoClient } from "mongodb";
 
-export const dynamic = "force dinamic";
+export const dynamic = "force dynamic";
 
 type Definition = {
   word: string;
